@@ -1,0 +1,20 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "javascripting": "^2.7.4",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1"
+  }
+}
