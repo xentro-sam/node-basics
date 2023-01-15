@@ -25,3 +25,5 @@ const isArmstrong = num => {
     }
     return false
 }
+
+module.exports = {isPrime, isArmstrong}
