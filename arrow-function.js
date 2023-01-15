@@ -1,9 +1,4 @@
-const prompt = require("prompt-sync")();
-
-let input = prompt('Enter a number ', '0')
-input = Number(input)
-
-const checkPrime = num => {
+const isPrime = num => {
     let cnt = 0
     for(let i = 0; i <= num; i++) {
         if(num % i === 0) {
@@ -16,27 +11,17 @@ const checkPrime = num => {
     return false
 }
 
-const checkArmstrong = num => {
-    let nNum = 0;
-    for(let i = num; i > 0; i /= 10) {
-        let dig = i % 10;
-        nNum += dig * dig * dig;
+const isArmstrong = num => {
+    let nNum = 0
+    let original = num
+    while(num > 0) {
+        let digit = num % 10
+        nNum = nNum + (digit ** 3)
+        num /= 10
+        num = Math.trunc(num)
     }
-    if(nNum === num) {
+    if(nNum === original) {
         return true
     }
     return false
-}
-
-if(checkPrime === true) {
-    console.log('The number is a prime')
-}
-else {
-    console.log('The number is not a prime')
-}
-if(checkArmstrong === true) {
-    console.log('The number is an armstrong')
-}
-else {
-    console.log('The number is not an armstrong')
 }
