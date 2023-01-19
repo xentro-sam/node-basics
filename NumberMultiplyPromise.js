@@ -7,7 +7,7 @@ function readNumberCustom(filename) {
       if(err) {
         reject(err);
       }
-      else if(Number.isInteger(Number(data))) {
+      else if(!Number.isInteger(Number(data))) {
         reject('Given file doesn\'t have a number')
       }
       else {
@@ -39,5 +39,15 @@ readNumberCustom('numberFile1.txt')
 .then(num5 => {
     result *= num5
     console.log(result)
+})
+.catch(err => console.log(err))
+
+let newResult = 1;
+Promise.all([readNumberCustom('numberFile1.txt'), readNumberCustom('numberFile2.txt'), readNumberCustom('numberFile3.txt'), readNumberCustom('numberFile4.txt'), readNumberCustom('numberFile5.txt')])
+.then((values) => {
+  values.forEach(element => {
+    newResult *= element;
+  })
+  console.log(newResult)
 })
 .catch(err => console.log(err))
